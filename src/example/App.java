@@ -1,10 +1,10 @@
 package example;
 import java.util.Scanner;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
-
         Scanner sc= new Scanner(System.in);
+        Calculator calculator = new Calculator();
 
         while (true) {
             System.out.println("첫번째 수를 입력하세요: ");
@@ -17,13 +17,17 @@ public class Main {
             int b = sc.nextInt();
 
             if(charAt.equals("+")){
-                System.out.println("결과: "+(a+b));
+                System.out.println("결과: "+ calculator.sum(a,b));
+                calculator.addResult(calculator.sum(a,b));
             } else if(charAt.equals("-")){
-                System.out.println("결과: "+ (a-b));
+                System.out.println("결과: "+ calculator.sub(a,b));
+                calculator.addResult(calculator.sub(a,b));
             } else if(charAt.equals("*")){
-                System.out.println("결과: "+ (a*b));
+                System.out.println("결과: "+ calculator.mul(a,b));
+                calculator.addResult(calculator.mul(a,b));
             } else if(charAt.equals("/") && b!=0){
-                System.out.println("결과: "+(a/b));
+                System.out.println("결과: "+calculator.div(a,b));
+                calculator.addResult(calculator.div(a,b));
             } else if(charAt.equals("/") && b==0){
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
             } else {
@@ -35,11 +39,8 @@ public class Main {
                 break;
             }
 
+
         }
-
-
-
-
 
     }
 }
