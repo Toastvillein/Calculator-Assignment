@@ -1,10 +1,11 @@
 package example;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Calculator {
 
-    private ArrayList<Integer> result = new ArrayList<>();
+    private List<Integer> result = new ArrayList<>();
 
     public int sum(int a, int b) {
         return a + b;
@@ -28,18 +29,23 @@ public class Calculator {
            result.add(a);
     }
 
-    public ArrayList<Integer> getResult(){
+    public List<Integer> getResult(){
         return this.result;
     }
 
-    public void setResult(ArrayList<Integer> a){
+    public void setResult(List<Integer> a){
         this.result = a;
     }
 
     // 가장 먼저 저장된 데이터를 삭제하는 기능
 
     public void removeResult(int a){
-        result.remove(0);
+        try{
+            result.remove(0);
+        } catch(NullPointerException e){
+            System.out.println("저장된 결가가 없습니다.");
+        }
+
     }
 
 

@@ -16,7 +16,7 @@ public class App {
             System.out.println("두번째 수를 입력하세요:");
             int b = sc.nextInt();
 
-            if(charAt.equals("+")){
+            if(charAt.equals("+")){           // 가독성 측면에서 switch-case 문이 좀더 좋다
                 System.out.println("결과: "+ calculator.sum(a,b));
                 calculator.addResult(calculator.sum(a,b));
             } else if(charAt.equals("-")){
