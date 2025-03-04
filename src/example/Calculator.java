@@ -43,7 +43,7 @@ public class Calculator {
         try{
             result.remove(0);
         } catch(NullPointerException e){
-            System.out.println("저장된 결가가 없습니다.");
+            System.out.println("저장된 결과가 없습니다.");
         }
 
     }
